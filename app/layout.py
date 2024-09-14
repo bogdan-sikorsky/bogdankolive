@@ -12,10 +12,19 @@ def header():
     # ---PAGE SETTINGS---
     st.set_page_config(
         page_title='Bogdan Sikorsky, Data Engineer',
-        page_icon='https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/black/_bigdatabee.jpeg',
+        page_icon='https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/black/bogdanlivefavico.png',
         layout="wide",
         # initial_sidebar_state="collapsed",
     )
+
+    # ---HEADER LOGO---
+    st.subheader("", divider='green')
+    col1, col2, col3, col4, col5 = st.columns([1,1,2,1,1])
+    col3.markdown(
+        f"<img src='https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/black/bogdanlivelogo.png' alt='WebsiteLogo'>",
+        unsafe_allow_html=True
+    )
+    st.subheader("", divider='green')
 
     # ---USING CUSTOM CSS---
     # Extracting colors from Streamlit theme
@@ -36,7 +45,6 @@ def header():
         )  # replacing variables with colours
         st.markdown(f"<style>{custom_css}</style>", unsafe_allow_html=True)
 
-    st.subheader("", divider='green')
 
 
 # ---CONTACTS---
