@@ -1,0 +1,31 @@
+# STYLE
+[theme]
+backgroundColor="#F5F7F8"
+secondaryBackgroundColor="#FCDE70"
+primaryColor="#BF8211"
+textColor="#185519"
+font = "sans serif"
+
+# STYLE
+[theme]
+backgroundColor="#003049"
+secondaryBackgroundColor="#801819"
+primaryColor="#f77f00"
+textColor="#fcbf49"
+font = "sans serif"
+
+# STYLE
+[theme]
+backgroundColor="#fefae0"
+secondaryBackgroundColor="#dda15e"
+primaryColor="#606c38"
+textColor="#283618"
+font = "sans serif"
+
+# STYLE
+[theme]
+backgroundColor="#fefae0"
+secondaryBackgroundColor="#dda15e"
+primaryColor="#ac750f"
+textColor="#283618"
+font = "sans serif"
