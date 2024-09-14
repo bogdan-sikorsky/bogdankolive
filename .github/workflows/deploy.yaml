@@ -112,12 +112,12 @@ jobs:
     - name: Deploying the app at the PROD server
       run: |
         REPO_NAME="${GITHUB_REPOSITORY##*/}"
-        ssh -t -t -o StrictHostKeyChecking=no "${{ secrets.USERNAME }}@${{ secrets.HOST }}" << 'EOF'
-        cd $REPO_NAME
+        ssh -t -t -o StrictHostKeyChecking=no "${{ secrets.USERNAME }}@${{ secrets.HOST }}" << EOF
+        cd "$REPO_NAME"
         mkdir -p TEST_DIR
-
         exit
         EOF
+
 
 #        make down ENV=prod
 #        make build ENV=prod
