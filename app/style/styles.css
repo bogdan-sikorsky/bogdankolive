@@ -1,0 +1,159 @@
+/* CUSTOM CSS STYLES FOR THE WEBSITE */
+
+
+/* MAIN STYLE SETTINGS */
+/* Hide Streamlit Branding */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+[data-testid="stSidebarHeader"] {display: none;} /* removes big empty div on top of sidebar */
+[data-testid="stSidebarNav"] {margin-top: 20px;} /* makes small margin on top of sidebar */
+
+header {visibility: hidden;} /* hide stupid rainbow on top */
+[data-testid='stHeaderActionElements'] {display: none;} /* removes default anchors for every title on a page*/
+
+/* margins for extra wide default layout */
+.block-container {
+    padding-top: 0rem;
+    padding-bottom: 2rem;
+/*    padding-left: 10rem;
+    padding-right: 10rem; */
+}
+
+
+/* SETTING FOR SIDEBAR CONSTANT SIZE */
+/* Hide the expand/collapse button */
+/*.css-erpbzb.edgvbvh3 {
+    display: none;
+}*/
+
+/* Set the sidebar width to minimal */
+.css-1d391kg {
+    width: 200px;
+    min-width: 200px;
+}
+
+/* Hide the hamburger menu (expand/collapse sidebar button) */
+/*.css-erpbzb.edgvbvh3 {
+    display: none;
+}*/
+
+
+/* STYLES FOR STUPID NAVBAR PAGES NAVIGATION*/
+/* Customize sidebar headings and page links */
+[data-testid="stSidebar"] h2 {
+    color: textColor; /* color from original color scheme */
+    font-weight: bold;
+}
+/* Customize navigation links in the sidebar */
+[data-testid="stSidebar"] a {
+    color: {color_text};
+    font-weight: bold;
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: border-left 0.3s, background-color 0.3s;
+}
+/* Hover effect for navigation links in the sidebar */
+[data-testid="stSidebar"] a:hover {
+    border-left: 4px solid textColor; /* color from original color scheme */
+    background-color: primaryColor; /* color from original color scheme */
+    color: backgroundColor; /* color from original color scheme */
+    font-weight: bold;
+}
+
+
+/* STYLES FOR CUSTOM TABLE OF CONTENT EXTRACTED FROM MARKDOWN TITLES*/
+.toc {
+    border-right: 2px solid #ddd;
+    padding-right: 20px;
+}
+.toc a {
+    display: block;
+    padding: 10px;
+    margin-bottom: 5px;
+    color: textColor; /* color from original color scheme */
+    font-weight: bold;
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: border-left 0.3s, background-color 0.3s;
+}
+.toc a:hover {
+    border-left: 4px solid textColor; /* color from original color scheme */
+    background-color: primaryColor; /* color from original color scheme */
+}
+
+
+/* STYLES FOR EXPANDABLE GAPS BETWEEN CONTACT ICONS */
+/* Container for the contacts */
+.contacts-container {
+    display: flex;
+    gap: 5%; /* Adjust the gap percentage as needed */
+}
+
+/* Styling for individual contact items */
+.contact-item {
+    flex: 1 1 auto; /* Allow items to grow and shrink as needed */
+    max-width: calc(33% - 20px); /* Adjust based on the number of items per row and gap */
+}
+
+/* Optional: Ensure the container doesn’t overflow */
+.contacts-container {
+    box-sizing: border-box; /* Include padding and border in element’s total width and height */
+}
+
+
+/* FONT SIZES */
+/* Global font size for the body */
+body {
+    font-size: 18px;
+}
+
+/* Header styles */
+h1 {
+    font-size: 36px; /* Largest header */
+}
+h2 {
+    font-size: 32px;
+}
+h3 {
+    font-size: 26px;
+}
+h4 {
+    font-size: 22px;
+}
+h5 {
+    font-size: 20px;
+}
+h6 {
+    font-size: 18px; /* Smallest header */
+}
+
+/* Paragraph style */
+p {
+    font-size: 18px;
+}
+
+/* List styles */
+ul, ol {
+    font-size: 18px;
+}
+
+/* Streamlit widget customizations */
+.stButton>button {
+    font-size: 18px;
+}
+.stTextInput>div>div>input {
+    font-size: 18px;
+}
+.stSelectbox>div>div>div>div {
+    font-size: 18px;
+}
+.stMarkdown>div {
+    font-size: 18px;
+}
+
+/* Links */
+a {
+    font-size: 18px;
+}

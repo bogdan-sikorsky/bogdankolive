@@ -1,0 +1,20 @@
+# STYLE
+[theme]
+backgroundColor="#ffffff"
+secondaryBackgroundColor="#92ee4b"
+primaryColor="#55aa16"
+textColor="#000000"
+font = "sans serif"
+
+# REMOVES TOOLBAR ON THE RIGHT SIDE
+[client]
+toolbarMode='minimal'
+[ui]
+hideTopBar=true
+
+# DISABLE DEV TOOLS
+#[server]
+#headless = true
+#enableCORS = false
+#[client]
+#showErrorDetails = false

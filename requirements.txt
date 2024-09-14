@@ -1,0 +1,6 @@
+streamlit==1.38.0
+Markdown==3.7
+weasyprint==62.3
+email_validator==2.2.0
+pillow==10.4.0
+python-dotenv==1.0.1
