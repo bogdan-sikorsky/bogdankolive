@@ -55,51 +55,68 @@ jobs:
       run: make build
 
     - name: Start app inside GitHub env # Uses Docker Compose to run the application (Docker Compose files are in project root)
-      run: make build ENV=prod
+      run: make up ENV=prod
 
     - name: Stop app inside GitHub env # Stops everything
       run: make down ENV=prod
 
     # ---Production server env---
-#    - name: Set up SSH to PROD server
-#      uses: webfactory/ssh-agent@v0.5.3
-#      with:
-#        ssh-private-key: ${{ secrets.PROD_SSH }}
-#
-#    - name: Download prod env on PROD server
-#      run: |
-#        ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
-#          cd ${{ secrets.PROJ }}/
-#          chmod +x sh_download_vars_env.sh
-#          ./sh_download_vars_env.sh \
-#            ${{ secrets.REPO_OWNER }} \
-#            ${{ secrets.REPO_NAME }} \
-#            ${{ secrets.GIT_TOKEN }} \
-#            production \
-#            .env.prod
-#        EOF
-#
-#    - name: Download dev env on PROD server
-#      run: |
-#        ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
-#          cd ${{ secrets.PROJ }}/
-#          chmod +x sh_download_vars_env.sh
-#          ./sh_download_vars_env.sh \
-#            ${{ secrets.REPO_OWNER }} \
-#            ${{ secrets.REPO_NAME }} \
-#            ${{ secrets.GIT_TOKEN }} \
-#            development \
-#            .env
-#        EOF
-#
-#    - name: Deploying the app at the PROD server
-#      run: |
-#        ssh -t -t -o StrictHostKeyChecking=no "${{ secrets.USERNAME }}@${{ secrets.HOST }}" << 'EOF'
-#        cd ${{ secrets.PROJ }}/
-#        git pull origin main
-#        make down ENV=prod
-#        make build ENV=prod
-#        make up ENV=prod
-#        make clean
-#        exit
-#        EOF
+    - name: Set up SSH to PROD server
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.PROD_SSH }}
+
+    - name: Pulling code from GitHub to PROD server
+      run: |
+        REPO_NAME="${GITHUB_REPOSITORY##*/}"
+        ssh -t -t -o StrictHostKeyChecking=no "${{ secrets.USERNAME }}@${{ secrets.HOST }}" << EOF
+        mkdir -p $REPO_NAME
+        cd $REPO_NAME
+        git init
+        git remote add origin https://github.com/${GITHUB_REPOSITORY}.git
+        git remote set-url origin https://${{ secrets.GIT_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git
+        git pull origin main
+        exit
+        EOF
+
+
+    - name: Download prod env on PROD server
+      run: |
+        REPO_NAME="${GITHUB_REPOSITORY##*/}"
+        ssh -o StrictHostKeyChecking=no "${{ secrets.USERNAME }}@${{ secrets.HOST }}" << EOF
+        cd $REPO_NAME
+          chmod +x sh_download_vars_env.sh
+          ./sh_download_vars_env.sh \
+            ${{ secrets.REPO_OWNER }} \
+            $REPO_NAME \
+            ${{ secrets.GIT_TOKEN }} \
+            production \
+            .env.prod
+          exit
+        EOF
+
+    - name: Download dev env on PROD server
+      run: |
+        REPO_NAME="${GITHUB_REPOSITORY##*/}"
+        ssh -o StrictHostKeyChecking=no "${{ secrets.USERNAME }}@${{ secrets.HOST }}" << EOF
+        cd $REPO_NAME
+          ./sh_download_vars_env.sh \
+            ${{ secrets.REPO_OWNER }} \
+            $REPO_NAME \
+            ${{ secrets.GIT_TOKEN }} \
+            development \
+            .env
+          exit
+        EOF
+
+    - name: Deploying the app at the PROD server
+      run: |
+        REPO_NAME="${GITHUB_REPOSITORY##*/}"
+        ssh -t -t -o StrictHostKeyChecking=no "${{ secrets.USERNAME }}@${{ secrets.HOST }}" << 'EOF'
+        cd $REPO_NAME
+        make down ENV=prod
+        make build ENV=prod
+        make up ENV=prod
+        make clean
+        exit
+        EOF
