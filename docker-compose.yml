@@ -1,0 +1,33 @@
+services:
+
+  streamlit_app:
+    image: ${IMAGE_NAME}:${TAG}
+    build: .
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - ${ENV_FILE}
+    depends_on:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.streamlit_app.rule=HostRegexp(`${DOMAIN}`)"  # Host address
+      - "traefik.http.services.streamlit_app.loadbalancer.server.port=${PORT}"
+      - "traefik.http.routers.streamlit_app.entrypoints=web"  # Use the HTTP entry point (web)
+    command: streamlit run app/01_Home.py --server.port=${PORT} --server.address=0.0.0.0
+
+  traefik:
+    image: traefik:v2.10
+    command:
+      - "--log.level=DEBUG"  # Debug tools
+      - "--api.insecure=true"  # Debug tools
+      - "--api.dashboard=true"  # Debug tools
+      - "--providers.docker=true"  # Out of the box settings
+      - "--entrypoints.web.address=:80"  # Listen ports (http)
+      - "--entrypoints.websecure.address=:443"  # Listen ports (https)
+    ports:
+      - "80:80"  # Open ports (http)
+      - "443:443"  # Open ports (https)
+      - "8080:8080"  # Traefik console
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"  # Out of the box settings

@@ -1,0 +1,66 @@
+services:
+
+  streamlit_app:
+    image: ${IMAGE_NAME}
+    build: .
+    ports:
+      - "${PORT}:${PORT}"
+    env_file:
+      - ${ENV_FILE}
+    depends_on:
+      - traefik
+    labels:
+      # Base setup
+      - "traefik.enable=true"
+#      - "traefik.http.routers.streamlit_app.rule=PathPrefix(`/`)"  # Match any path to root
+      - "traefik.http.routers.streamlit_app.rule=HostRegexp(`${DOMAIN}`)"  # Host address
+      - "traefik.http.services.streamlit_app.loadbalancer.server.port=${PORT}"
+      - "traefik.http.routers.streamlit_app.entrypoints=web"  # Use the HTTP entry point (web)
+      # Get SSL certificate
+#      - "traefik.http.routers.streamlit_app.rule=Host(`${DOMAIN}`)"  # Replace with your domain
+#      - "traefik.http.routers.streamlit_app.entrypoints=websecure"  # Use the secure entry point
+#      - "traefik.http.routers.streamlit_app.tls.certresolver=myresolver"  # Use Let's Encrypt resolver
+      # Redirect to SSL
+#      - "traefik.http.routers.streamlit_app.middlewares=redirect-to-https"
+#      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      # Limits
+#      - "traefik.http.middlewares.ratelimit.rateSet.burst=5"  # Burst allowed max 5 requests per second
+#      - "traefik.http.middlewares.ratelimit.rateSet.average=2"  # Average allowed max 5 requests per second
+#      - "traefik.http.routers.streamlit_app.middlewares=ratelimit"
+      # Error pages handling
+#      - "traefik.http.routers.streamlit_app.middlewares=custom-error-pages"
+    command: streamlit run app/01_Home.py --server.port=${PORT} --server.address=0.0.0.0
+
+  traefik:
+    image: traefik:v2.10
+    command:
+      # Base setup
+      - "--log.level=DEBUG"  # Debug tools
+#      - "--api.insecure=true"  # Debug tools
+#      - "--api.dashboard=true"  # Debug tools
+      - "--providers.docker=true"  # Out of the box settings
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"  # Listen ports (http)
+      - "--entrypoints.websecure.address=:443"  # Listen ports (https)
+      # Get SSL certificate
+#      - "--certificatesresolvers.myresolver.acme.tlschallenge=true"  # Use TLS challenge for SSL
+#      - "--certificatesresolvers.myresolver.acme.email=${EMAIL_USERNAME}"  # Where to store certificates
+#      - "--certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json"  # Use TLS challenge for SSL
+#      - "--certificatesresolvers.myresolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"  # DEBUG
+#      - "--certificatesresolvers.myhttpchallenge.acme.httpchallenge.entrypoint=web"
+#      - "--certificatesresolvers.myhttpchallenge.acme.tlschallenge=true"
+    ports:
+      - "80:80"  # Open ports (http)
+      - "443:443"  # Open ports (https)
+#      - "8080:8080"  # Traefik console
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"  # Out of the box settings
+      - "./letsencrypt:/letsencrypt"  # Storage for SSL certificates
+
+#  error_pages:
+#    image: httpd:alpine
+#    volumes:
+#      - "./error-pages:/usr/local/apache2/htdocs/"
+#    labels:
+#      - "traefik.enable=true"
+#      - "traefik.http.services.error_pages.loadbalancer.server.port=80"
