@@ -25,6 +25,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the entire app to the working directory
 COPY . .
 
+# Replacement of the Stearmlit index.html with their unbreakable logo and title
+RUN cp app/style/index.html \
+    $(python -c "import sysconfig; print(sysconfig.get_paths()['purelib'])")/streamlit/static/index.html
+
 # Expose the port for Streamlit
 # EXPOSE 00000
 
