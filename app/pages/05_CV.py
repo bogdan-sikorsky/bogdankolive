@@ -1,10 +1,7 @@
-import re
-import markdown as md
 import streamlit as st
 
-from io import BytesIO
 from pathlib import Path
-from weasyprint import HTML
+
 from layout import header, footer
 from helpers.toc import generate_toc
 

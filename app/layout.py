@@ -12,7 +12,7 @@ def header():
     # ---PAGE SETTINGS---
     st.set_page_config(
         page_title='Bogdan Sikorsky, Data Engineer',
-        page_icon='https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/black/bogdanlivefavico.png',
+        page_icon='https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/black/danko_favicon.png',
         layout="wide",
         # initial_sidebar_state="collapsed",
     )
@@ -21,9 +21,10 @@ def header():
     st.subheader("", divider='green')
     col1, col2, col3, col4, col5 = st.columns([1,1,2,1,1])
     col3.markdown(
-        f"<img src='https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/black/bogdanlivelogo.png' alt='WebsiteLogo'>",
+        f"<img src='https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/black/danko_logo.png' alt='WebsiteLogo'>",
         unsafe_allow_html=True
     )
+    # col3.image('/home/bogdan/Documents/git/bogdanko_live/app/logo_bogdanko_live_03.png')
     st.subheader("", divider='green')
 
     # ---USING CUSTOM CSS---
