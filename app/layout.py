@@ -24,7 +24,7 @@ def header():
         f"<img src='https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/black/danko_logo.png' alt='WebsiteLogo'>",
         unsafe_allow_html=True
     )
-    # col3.image('/home/bogdan/Documents/git/bogdanko_live/app/logo_bogdanko_live_03.png')
+    # col3.image('/home/bogdan/Documents/git/bogdanko_live/app/logo_bogdanko_live_04.png')
     st.subheader("", divider='green')
 
     # ---USING CUSTOM CSS---

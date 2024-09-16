@@ -65,7 +65,7 @@ Projects were often quite similar and required creating scrapers, cleaning data,
 
 > **Databases**: SQL, MongoDB
 
-> **DevOps**: Git, Docker, Docker-compose, Makefile, Traefik, Celery, RabbitMQ, Jenkins, Google Cloud Platform, AWS, Azure DevOps, Uvicorn, Linux, Windows
+> **DevOps**: Git, Docker, Docker-compose, Makefile, Traefik, CI/CD, Celery, RabbitMQ, Jenkins, Google Cloud Platform, AWS, Azure DevOps, Uvicorn, Linux, Windows
 
 > **Services**: ChatGPT API, Google Cloud Storage, Google Translate API, Google Text To Speech API, Google Sheets API, Nominatim API
 
