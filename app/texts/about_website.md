@@ -2,27 +2,32 @@
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
 
+
 <div style="width: 68%;">
 
-Everyone knows that issue when you're talking with clients or recruiters they ask to show your CV, portfolio etc. I previously stored my resume in a nicely formatted Google Doc file and was able to share it by the link.
+Everyone is familiar with an issue when you're talking with clients or recruiters and they ask to show your CV, portfolio etc. I previously stored my resume in a nicely formatted Google Doc file and I was able to share it by the link.
 
-I like to update my resume frequently and there is an issue here. Sometimes you need to send your CV as a file and not as a link so each time you download a CV you always have a slightly different version that stucks over each other and soon you have dozens of PDF files with your CV across multiple devices which becomes a real mess.
+I like to update my resume frequently and it was a problem for me. Sometimes I need to send my CV as a file and not as a link so each time I had to download a CV. I always had a slightly different version. Files were stuck over each other and in a matter of time, I had dozens of PDF files with my CV across multiple devices. That was a real mess.
 
 </div>
+
 
 <div style="width: 28%;">
 
+
 <img src="https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/cat_code_02.jpeg" alt="niceimage" style="border-radius:5%" border="0">
 
-</div>
 
 </div>
 
-####
 
-Meanwhile, you can't add to your resume a lot of background and context about yourself since it should be short if possible so I needed a place alongside the CV place to add this context. Also, important to have a place to with something kinda of portfolio. So I decided to create my own website to have it all in one place, have easy and simple access to edit it and have one and only up-to-date version of my CV that anyone can review and download if needed.
+</div>
 
-# My technical requirements
+#### 
+
+Meanwhile, you can't add to your resume a lot of background and context about yourself since it should be short if possible so I needed a place alongside the CV to add this context. Also, important to have a place to with something kinda of portfolio. So I decided to create my own website to have it all in one place, have easy and simple access to edit it and have one and only up-to-date version of my CV that anyone can review and download if needed.
+
+# Technical requirements
 
 ### Text editing
 
@@ -32,11 +37,11 @@ Markdown files become the best solution for me because they are easy to integrat
 
 ### Web application
 
-I'm not a front-end fella or a designer, at least for now so I needed a Python that would minimize my interactions with HTML, CSS or JavaScript.
+I'm not a front-end fella or a designer, at least for now so I needed a Python framework that would minimize my interactions with HTML, CSS or JavaScript.
 
 Fortunately, in 2024 there are plenty of Python frameworks that give you a chance to make your web app with frontend but to use Python only.
 
-I chose Stearmlit since it looked to me as the simplest one, reliable since it has been maintained for multiple years, has its community if questions arise and is well documented. As a side note, this framework is a very powerful tool for infographics, dashboards etc. so it was nice to learn it in action.
+I've chosen Stearmlit since it looked to me as the simplest one, reliable since it has been maintained for multiple years, has its community if questions arise and is well documented. As a side note, this framework is a very powerful tool for infographics, dashboards etc. so it was nice to learn it in action.
 
 # How it works
 
@@ -51,8 +56,8 @@ Stermlit works as my back-end and front-end at the same time. It is very simple 
 Meanwhile, this simplicity has its downsides.
 
 > Your front-end is quite scripted and if you want to make it beautiful and customize it for yourself you'll probably have to spend time learning how the framework works and manually change what you want.
->
-> In my case, I had to find in framework index.html and replace it with my own to use my own logo, website name and website description in link previews in chats and Google indexing. By default, index.html contains Stearmlit brending that appears everything even if you used built-in commands to change those.
+
+> I had to find in framework index.html and replace it with my own to use my own logo, website name and website description in link previews in chats and Google indexing. By default, index.html contains Stearmlit branding that appears everything even if you used built-in commands to change those.
 
 > I had to inject a bit of my own CSS to remove some unnecessary features for my personal website, increase font size etc.
 
@@ -72,7 +77,7 @@ To organize server routing I used a simple but yet powerful tool called Traefik 
 
 ### CI/CD
 
-I have a GitHub workflow that handles all deployment processes so all I need to do to edit something is commit changes to Git. Everything else git will handle for me.
+I have a GitHub workflow that handles all deployment processes so all I need to do to edit something is commit changes to Git. Everything else GitHub will handle for me.
 
 # Conclusion
 
