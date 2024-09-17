@@ -2,21 +2,25 @@
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
 
-<div style="width: 48%;">
+<div style="width: 68%;">
 
-Everyone knows that issue when you're talking with clients or recruiters they ask to show your CV, portfolio etc. I previously stored my resume in a nicely formatted Google Doc file and was able to share it by the link. I like to update my resume frequently and there is an issue here. Sometimes you need to send your CV as a file and not as a link so each time you download a CV you always have a slightly different version that sthucks over each other and soon you have dozens of PDF files with your CV across multiple devices which becomes a real mess.
+Everyone knows that issue when you're talking with clients or recruiters they ask to show your CV, portfolio etc. I previously stored my resume in a nicely formatted Google Doc file and was able to share it by the link.
 
-Meanwhile, you can't add to your resume a lot of background and context about yourself since it should be short if possible so I needed a place alongside the CV place to add this context. Also, important to have a place to with something kinda of portfolio. So I decided to create my own website to have it all in one place, have easy and simple access to edit it and have one and only up-to-date version of my CV that anyone can review and download if needed.
+I like to update my resume frequently and there is an issue here. Sometimes you need to send your CV as a file and not as a link so each time you download a CV you always have a slightly different version that stucks over each other and soon you have dozens of PDF files with your CV across multiple devices which becomes a real mess.
 
 </div>
 
-<div style="width: 48%;">
+<div style="width: 28%;">
 
 <img src="https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/cat_code_02.jpeg" alt="niceimage" style="border-radius:5%" border="0">
 
 </div>
 
 </div>
+
+####
+
+Meanwhile, you can't add to your resume a lot of background and context about yourself since it should be short if possible so I needed a place alongside the CV place to add this context. Also, important to have a place to with something kinda of portfolio. So I decided to create my own website to have it all in one place, have easy and simple access to edit it and have one and only up-to-date version of my CV that anyone can review and download if needed.
 
 # My technical requirements
 
