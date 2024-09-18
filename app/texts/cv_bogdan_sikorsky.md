@@ -1,10 +1,10 @@
 # Bogdan Sikorsky
 
-### Data Engineer
+## Data Engineer
 
-##### Python | API | ETL | SQL | Scraping
+#### Python | API | ETL | SQL | Scraping | Automation
 
-##### Kyiv, Ukraine
+### Kyiv, Ukraine
 
 **[WebSite](https://bit.ly/Website_Bogdan_Sikorsky) |
 [LinkedIn](https://bit.ly/LinkedIn_Bogdan_sikorsky) |
@@ -16,11 +16,11 @@
 
 # Career
 
-I have worked as a Python developer focused on data solutions since 2020. I started with small freelance projects from private clients. My first projects were automation tasks such as calculating, cleaning and transforming data with Python scripts.
+In recent years I worked full-time for a US company which provides real estate market analysis. My position was a Data Engineer. I worked on improving huge and complicated ETL processes.
+
+Overall, I have worked as a Python developer focused on data solutions since 2020. I started with small freelance projects from private clients. My first projects were automation tasks such as calculating, cleaning and transforming data with Python scripts.
 
 Later on, I learned how to scrape data from the web and started working on multiple moderate-difficulty projects. The goal was to create scrapers for e-commerce, real estate, etc websites, store collected data and create APIs for further data distribution.
-
-In recent years I worked full-time for a US company which provides real estate market analysis. My position was a Data Engineer. I worked on improving huge and complicated ETL processes.
 
 # Experience
 
@@ -28,7 +28,7 @@ In recent years I worked full-time for a US company which provides real estate m
 
 ### Nancy Packes Inc
 
-March 2022 – January 2024
+_March 2022 – January 2024_
 
 I was responsible for developing and maintaining hundreds of scrapers for single-page websites and large platforms with protections and JavaScript. I was supporting an automated weekly scraping process and created different logs and metrics.
 
@@ -47,7 +47,7 @@ I developed solutions for data cleaning because we had a lot of polluted data fr
 
 ### Freelance
 
-October 2020 – March 2022
+_October 2020 – March 2022_
 
 I had different projects from UpWork, LinkedIn and even my YouTube. Usually, they lasted from a week to several months so there is no particular project worth stand-alone mentioning.
 
@@ -58,6 +58,14 @@ Projects were often quite similar and required creating scrapers, cleaning data,
 - I gained enough experience to compete for better roles and projects and finally become a full-time Data Engineer.
 
 **Tech Stack**: ```FastAPI, MongoDB, Pandas, Pydantic, Docker, Google Cloud Platform, Scrapy, Selenium, Git.```
+
+# Projects
+
+### WebRiderAsync
+
+_Asynchronous Web Requests Utility_
+
+I developed a Python-based asynchronous utility designed for efficient handling of large volumes of web requests using `aiohttp` and `asyncio`. WebRiderAsync simplifies the process of making parallel HTTP requests, has simple settings and is suitable for both API interaction and web scraping. Published on [PyPI](https://pypi.org/project/webrider-async/) with ongoing updates and with sources accessible on [GitHub](https://github.com/bogdan-sikorsky/webrider_async).
 
 # Skills
 
@@ -79,6 +87,7 @@ Projects were often quite similar and required creating scrapers, cleaning data,
 
 - [Python (Basic) Certificate by Hackerrank.com](https://www.hackerrank.com/certificates/d32ad5a6f887)
 - [SQL (Basic) Certificate by Hackerrank.com](https://www.hackerrank.com/certificates/c383d100da8d)
+- [SQL (Intermediate) Certificate by Hackerrank.com](https://www.hackerrank.com/certificates/1e77a3c646f5)
 
 # Goals
 
