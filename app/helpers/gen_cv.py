@@ -24,6 +24,7 @@ def convert_cv_markdown_to_pdf():
     """
     # Combine CSS with the HTML content
     html_with_css = f"{css}{html_text}"
+    # html_with_css = html_text  #test
 
     # Convert markdown to HTML and generating pdf
     pdf_buffer = BytesIO()

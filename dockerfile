@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
     libgdk-pixbuf2.0-0 \
     libffi-dev \
     libglib2.0-0 \
+    fonts-noto \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the requirements file
