@@ -71,8 +71,6 @@ Nothing new and special. I have quite simple Docker and Docker-Compose files to 
 
 This website is deployed on Amazon Web Services EC2 machinery.
 
-### Server routing
-
 To organize server routing I used a simple but yet powerful tool called Traefik that directs incoming traffic to the Streamlit app. Also, I used Cloudflare to get an SSL certificate.
 
 ### CI/CD
