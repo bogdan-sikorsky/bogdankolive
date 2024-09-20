@@ -10,6 +10,13 @@ header {visibility: hidden;}
 [data-testid="stSidebarHeader"] {display: none;} /* removes big empty div on top of sidebar */
 [data-testid="stSidebarNav"] {margin-top: 20px;} /* makes small margin on top of sidebar */
 
+/* Ensure all elements in the sidebar are always visible */
+div[data-testid="stSidebarNav"] ul {
+    overflow: visible !important;  /* Ensure the full list is visible */
+    max-height: none !important;   /* Remove any height restrictions */
+}
+[data-testid="stSidebarNavViewButton"] {display: none;} /* removes view more button */
+
 header {visibility: hidden;} /* hide stupid rainbow on top */
 [data-testid='stHeaderActionElements'] {display: none;} /* removes default anchors for every title on a page*/
 
@@ -55,7 +62,7 @@ header {visibility: hidden;} /* hide stupid rainbow on top */
     transition: border-left 0.3s, background-color 0.3s;
 }
 /* Hover effect for navigation links in the sidebar */
-[data-testid="stSidebar"] a:hover {
+[data-testid="stSidebar"] a[data-testid="stSidebarNavLink"]:hover {
     border-left: 4px solid textColor; /* color from original color scheme */
     background-color: primaryColor; /* color from original color scheme */
     color: backgroundColor; /* color from original color scheme */
@@ -63,7 +70,7 @@ header {visibility: hidden;} /* hide stupid rainbow on top */
 }
 
 
-/* STYLES FOR CUSTOM TABLE OF CONTENT EXTRACTED FROM MARKDOWN TITLES*/
+/* CUSTOM TABLE OF CONTENT EXTRACTED FROM MARKDOWN TITLES */
 .toc {
     border-right: 2px solid #ddd;
     padding-right: 20px;
@@ -84,7 +91,7 @@ header {visibility: hidden;} /* hide stupid rainbow on top */
 }
 
 
-/* STYLES FOR EXPANDABLE GAPS BETWEEN CONTACT ICONS */
+/* EXPANDABLE GAPS BETWEEN CONTACT ICONS */
 /* Container for the contacts */
 .contacts-container {
     display: flex;

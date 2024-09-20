@@ -17,6 +17,17 @@ def header():
         # initial_sidebar_state="collapsed",
     )
 
+    # ---NAVBAR BRANDING---
+    # st.sidebar.markdown(
+    #     """
+    #     <div class="brand" style="display: flex; align-items: center; padding: 10px; margin-bottom: 10px;">
+    #         <img src="https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/black/_social%20(1).png" alt="My Image" style="width: 40px; height: 40px; margin-right: 10px; vertical-align: middle;">
+    #         <span style="font-size: 24px; font-weight: bold;">Bogdan Sikorsky</span>
+    #     </div>
+    #     """,
+    #     unsafe_allow_html=True
+    # )
+
     # ---HEADER LOGO---
     st.subheader("", divider='green')
     col1, col2, col3, col4, col5 = st.columns([1,1,2,1,1])
@@ -77,8 +88,3 @@ def footer():
     col1, col2, col3, col4, col5 = st.columns(5)
     col3.markdown(prepare_contacts(), unsafe_allow_html=True)
     col5.text('© 2024 Bogdan Sikorsky')
-    # col5.text(
-    #     'Kyiv, Ukraine \n\n'
-    #     '© 2024 Bogdan Sikorsky'
-    # )
-

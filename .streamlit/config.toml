@@ -9,12 +9,13 @@ font = "sans serif"
 # REMOVES TOOLBAR ON THE RIGHT SIDE
 [client]
 toolbarMode='minimal'
+showErrorDetails = false
+#showSidebarNavigation = false
+
 [ui]
 hideTopBar=true
 
 # DISABLE DEV TOOLS
-#[server]
-#headless = true
-#enableCORS = false
-#[client]
-#showErrorDetails = false
+[server]
+headless = true
+enableCORS = false

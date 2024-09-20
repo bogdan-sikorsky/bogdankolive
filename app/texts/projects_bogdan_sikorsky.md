@@ -1,5 +1,13 @@
 # WebRiderAsync
 
+**[PyPI](https://pypi.org/project/webrider-async/) |
+[GitHub](https://github.com/bogdan-sikorsky/webrider_async) |
+[Docs](https://github.com/bogdan-sikorsky/webrider_async/blob/main/README.md) |
+[Examples](https://github.com/bogdan-sikorsky/webrider_async/blob/main/examples/scraper.py) |
+[Contacts](https://bogdanko.live/Contacts)**
+
+---
+
 WebRiderAsync is an asynchronous utility designed for very simple and highly tunable handling of large volumes of web requests. 
 
 It leverages Python's `aiohttp` for asynchronous HTTP requests, making it capable of achieving high performance by processing multiple requests in parallel. This utility could be useful both for working with APIs and web scraping.
