@@ -19,25 +19,40 @@ ENV_VARS_URL="$GITHUB_API/repos/$REPO_OWNER/$REPO_NAME/environments/$ENVIRONMENT
 
 # Function to download environment variables using GitHub API
 download_env_vars() {
-  # Construct the curl command to get environment variables
-  CURL_CMD="curl -s -X GET \
-    -H \"Authorization: token $GITHUB_TOKEN\" \
-    -H \"Accept: application/vnd.github+json\" \
-    \"$ENV_VARS_URL\""
+  page=1
+  has_more=true
 
-  echo "Executing: $CURL_CMD"   # Print the full curl command
+  # Empty the output file
+  echo "" > "$ENV_FILE"
 
-  # Execute the curl command and get the response
-  response=$(eval "$CURL_CMD")
+  while $has_more; do
+    # Construct the curl command to get environment variables with pagination
+    CURL_CMD="curl -s -X GET \
+      -H \"Authorization: token $GITHUB_TOKEN\" \
+      -H \"Accept: application/vnd.github+json\" \
+      \"$ENV_VARS_URL?page=$page\""
 
-  # Check if the response is valid
-  if [ $? -ne 0 ]; then
-    echo "Failed to fetch environment variables."
-    exit 1
-  fi
+    echo "Executing: $CURL_CMD"   # Print the full curl command
 
-  echo "$response" | jq -r '.variables[] | "\(.name)=\(.value)"' > "$ENV_FILE"
-  echo "Downloaded environment variables to $ENV_FILE"
+    # Execute the curl command and get the response
+    response=$(eval "$CURL_CMD")
+
+    # Check if the response is valid
+    if [ $? -ne 0 ]; then
+      echo "Failed to fetch environment variables."
+      exit 1
+    fi
+
+    # Process the response
+    num_vars=$(echo "$response" | jq -r '.variables | length')
+    if [ "$num_vars" -eq 0 ]; then
+      has_more=false  # No more variables to fetch
+    else
+      echo "$response" | jq -r '.variables[] | "\(.name)=\(.value)"' >> "$ENV_FILE"
+      echo "Downloaded environment variables from page $page to $ENV_FILE"
+      ((page++))  # Increment page number for the next request
+    fi
+  done
 }
 
 # Call the function to download environment variables
