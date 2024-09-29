@@ -1,10 +1,23 @@
+import os
 import base64
+import sentry_sdk
 import streamlit as st
 
 from pathlib import Path
+from dotenv import load_dotenv
 
 from layout import header, footer
 from helpers.toc import generate_toc
+
+
+# ---HEALTH TRACKING---
+load_dotenv()
+sentry_sdk.init(
+    dsn=os.getenv('SENTRY_DSN'),
+    traces_sample_rate=1.0,
+    profiles_sample_rate=1.0,
+    enable_tracing=True,
+)
 
 
 # ---VISUAL CUSTOMIZATION---
