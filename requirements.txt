@@ -4,3 +4,4 @@ weasyprint==62.3
 email_validator==2.2.0
 pillow==10.4.0
 python-dotenv==1.0.1
+sentry-sdk==2.14.0
