@@ -13,6 +13,8 @@ services:
       - "traefik.http.routers.streamlit_app.rule=HostRegexp(`${DOMAIN}`)"  # Host address
       - "traefik.http.services.streamlit_app.loadbalancer.server.port=${PORT}"
       - "traefik.http.routers.streamlit_app.entrypoints=web"  # Use the HTTP entry point (web)
+    networks:
+      - bogdanko_network
     command: streamlit run app/01_Home.py --server.port=${PORT} --server.address=0.0.0.0
 
   traefik:
@@ -30,12 +32,13 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"  # Out of the box settings
       - "./letsencrypt:/letsencrypt"  # Storage for SSL certificates
+    networks:
+      - bogdanko_network
 
   netdata:
     image: netdata/netdata:stable
     container_name: netdata
     pid: host
-    network_mode: host
     restart: unless-stopped
     cap_add:
       - SYS_PTRACE
@@ -59,8 +62,14 @@ services:
       - NETDATA_CLAIM_TOKEN=${NETDATA_CLAIM_TOKEN}
       - NETDATA_CLAIM_URL=${NETDATA_CLAIM_TOKEN}
       - NETDATA_CLAIM_ROOMS=${NETDATA_CLAIM_TOKEN}
+    networks:
+      - bogdanko_network
 
 volumes:
   netdataconfig:
   netdatalib:
   netdatacache:
+
+networks:
+  bogdanko_network:
+    driver: bridge
