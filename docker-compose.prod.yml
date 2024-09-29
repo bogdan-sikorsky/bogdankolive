@@ -36,10 +36,8 @@ services:
       - bogdanko_network
 
   netdata:
-    image: netdata/netdata:stable
-    container_name: netdata
+    image: netdata/netdata:edge
     pid: host
-    restart: unless-stopped
     cap_add:
       - SYS_PTRACE
       - SYS_ADMIN
@@ -56,12 +54,17 @@ services:
       - /proc:/host/proc:ro
       - /sys:/host/sys:ro
       - /etc/os-release:/host/etc/os-release:ro
+      - /etc/hostname:/etc/hostname:ro
       - /var/log:/host/var/log:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
       - NETDATA_CLAIM_TOKEN=${NETDATA_CLAIM_TOKEN}
       - NETDATA_CLAIM_URL=${NETDATA_CLAIM_TOKEN}
       - NETDATA_CLAIM_ROOMS=${NETDATA_CLAIM_TOKEN}
+    deploy:
+      mode: global
+      restart_policy:
+        condition: on-failure
     networks:
       - bogdanko_network
 
