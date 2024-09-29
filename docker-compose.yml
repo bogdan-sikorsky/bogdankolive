@@ -23,6 +23,7 @@ services:
       - "--api.insecure=true"  # Debug tools
       - "--api.dashboard=true"  # Debug tools
       - "--providers.docker=true"  # Out of the box settings
+      - "--providers.docker.exposedbydefault=false"  # Out of the box settings
       - "--entrypoints.web.address=:80"  # Listen ports (http)
       - "--entrypoints.websecure.address=:443"  # Listen ports (https)
     ports:
@@ -31,3 +32,4 @@ services:
       - "8080:8080"  # Traefik console
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"  # Out of the box settings
+      - "./letsencrypt:/letsencrypt"  # Storage for SSL certificates
