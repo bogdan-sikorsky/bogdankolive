@@ -77,7 +77,7 @@ I developed a Python-based asynchronous utility designed for efficient handling 
 
 > **Cloud Services**: Google Cloud Platform (GCP), Amazon Web Services (AWS), Azure DevOps, Cloudflare, GoDaddy
 
-> **Monitoring Tools**: Sentry, NetData, UptimeRobot, Google Analytics, LogRocket Analytics
+> **Monitoring Tools**: Sentry, NetData, UptimeRobot, Google Analytics, LogRocket Analytics, PostHog Analytics
 
 > **Services**: ChatGPT API, Google Cloud Storage, Google Translate API, Google Text To Speech API, Google Sheets API, Nominatim API
 

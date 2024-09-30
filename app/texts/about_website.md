@@ -87,7 +87,7 @@ I have 3 tools that help me monitor how healthy my website is.
 
 ### Analytics
 
-I use Google Analytics and brand new for me tool that called LogRocket to be up to date how popular my website is.
+I use Google Analytics and brand new for me tools that called LogRocket and PostHog to be up to date how popular my website is.
 
 Some statistics provides also Cloudflare which I use for SSL certificates.
 
