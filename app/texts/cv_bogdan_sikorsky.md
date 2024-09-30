@@ -69,11 +69,15 @@ I developed a Python-based asynchronous utility designed for efficient handling 
 
 # Skills
 
-> **Technical**: Python, FastAPI, Streamlit, AsyncIO, Aiohttp, Scrapy, Splash, Requests, Selenium, Pandas, Numpy, LXML, Pydantic, Beautiful soup, Flask, Django
+> **Technical**: Python, FastAPI, Streamlit, AsyncIO, Aiohttp, Scrapy, Splash, Requests, Selenium, Pandas, Numpy, LXML, Pydantic, Beautiful Soup, Flask, Django
 
 > **Databases**: SQL, MongoDB
 
-> **DevOps**: Git, Docker, Docker-compose, Makefile, Traefik, CI/CD, Celery, RabbitMQ, Jenkins, Google Cloud Platform, AWS, Azure DevOps, Uvicorn, Linux, Windows
+> **DevOps**: Git, CI/CD, Docker, Docker-Compose, Makefile, Traefik, Celery, RabbitMQ, Jenkins, Uvicorn, Shell Script, Linux, Windows
+
+> **Cloud Services**: Google Cloud Platform (GCP), Amazon Web Services (AWS), Azure DevOps, Cloudflare, GoDaddy
+
+> **Monitoring Tools**: Sentry, NetData, UptimeRobot, Google Analytics, LogRocket Analytics
 
 > **Services**: ChatGPT API, Google Cloud Storage, Google Translate API, Google Text To Speech API, Google Sheets API, Nominatim API
 

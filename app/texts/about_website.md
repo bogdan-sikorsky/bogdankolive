@@ -77,6 +77,20 @@ To organize server routing I used a simple but yet powerful tool called Traefik 
 
 I have a GitHub workflow that handles all deployment processes so all I need to do to edit something is commit changes to Git. Everything else GitHub will handle for me.
 
+### Health monitoring
+
+I have 3 tools that help me monitor how healthy my website is.
+
+- Sentry gathers reports about any inside app errors and sends reports to my email if there are any issues.
+- I use a very powerful tool called NetData that shows me how healthy my server is (CPU, Memory, Storage etc.).
+- The UptimeRobot checks if my website is online every 5 minutes and will send an email notification if my website does not respond. 
+
+### Analytics
+
+I use Google Analytics and brand new for me tool that called LogRocket to be up to date how popular my website is.
+
+Some statistics provides also Cloudflare which I use for SSL certificates.
+
 # Conclusion
 
 In the end, this setup has given me exactly what I wanted: a simple, centralized platform to share my CV, add context about myself, and display my portfolio without the hassle of multiple file versions or cluttered devices. The combination of Markdown for easy text editing and Streamlit for both back-end and front-end functionality has made managing and updating my site straightforward and fast.
