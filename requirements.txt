@@ -1,7 +1,19 @@
+# Main
 streamlit==1.38.0
+
+# Utilities
 Markdown==3.7
 weasyprint==62.3
 email_validator==2.2.0
 pillow==10.4.0
+
+# Security
 python-dotenv==1.0.1
+
+# Error monitoring
 sentry-sdk==2.14.0
+
+# Medium feed
+feedparser==6.0.11
+html2text==2024.2.26
+beautifulsoup4==4.12.3

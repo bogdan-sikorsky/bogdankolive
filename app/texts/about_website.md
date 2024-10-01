@@ -1,7 +1,12 @@
-# Purpose
+# About website (idea and technical details)
+
+**[GitHub](https://github.com/bogdan-sikorsky/bogdanko_live)**
+
+---
+
+### Purpose
 
 <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-
 
 <div style="width: 68%;">
 
@@ -11,19 +16,15 @@ I like to update my resume frequently and it was a problem for me. Sometimes I n
 
 </div>
 
-
 <div style="width: 28%;">
-
 
 <img src="https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/cat_code_02.jpeg" alt="niceimage" style="border-radius:5%" border="0">
 
+</div>
 
 </div>
 
-
-</div>
-
-#### 
+#####
 
 Meanwhile, you can't add to your resume a lot of background and context about yourself since it should be short if possible so I needed a place alongside the CV to add this context. Also, important to have a place to with something kinda of portfolio. So I decided to create my own website to have it all in one place, have easy and simple access to edit it and have one and only up-to-date version of my CV that anyone can review and download if needed.
 

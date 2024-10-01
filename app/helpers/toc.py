@@ -20,5 +20,6 @@ def extract_biggest_headers(markdown_text):
         if match:
             title = match.group(2).strip()
             header_id = re.sub(r'\s+', '-', title.lower())  # Generate an anchor id
+            header_id = header_id.replace(':', '').replace('&', '').replace('(', '').replace(')', '').replace('--', '-')
             headers.append((title, header_id))
     return headers
