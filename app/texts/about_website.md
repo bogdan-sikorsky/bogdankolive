@@ -1,32 +1,22 @@
-# About website (idea and technical details)
+# About website
 
 **[GitHub](https://github.com/bogdan-sikorsky/bogdanko_live)**
+
+This page is dedicated to a story about the idea behind the website and its technical details
 
 ---
 
 ### Purpose
 
-<div style="display: flex; justify-content: space-between; align-items: flex-start;">
-
-<div style="width: 68%;">
-
 Everyone is familiar with an issue when you're talking with clients or recruiters and they ask to show your CV, portfolio etc. I previously stored my resume in a nicely formatted Google Doc file and I was able to share it by the link.
 
 I like to update my resume frequently and it was a problem for me. Sometimes I need to send my CV as a file and not as a link so each time I had to download a CV. I always had a slightly different version. Files were stuck over each other and in a matter of time, I had dozens of PDF files with my CV across multiple devices. That was a real mess.
 
-</div>
-
-<div style="width: 28%;">
-
 <img src="https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/cat_code_02.jpeg" alt="niceimage" style="border-radius:5%" border="0">
-
-</div>
-
-</div>
 
 #####
 
-Meanwhile, you can't add to your resume a lot of background and context about yourself since it should be short if possible so I needed a place alongside the CV to add this context. Also, important to have a place to with something kinda of portfolio. So I decided to create my own website to have it all in one place, have easy and simple access to edit it and have one and only up-to-date version of my CV that anyone can review and download if needed.
+Meanwhile, you can't add to your resume a lot of background and context about yourself since it should be short if possible so I needed a place alongside the CV to add this context. Also, it is important to have a place with something kinda of portfolio. So I decided to create my own website to have it all in one place, have easy and simple access to edit it and have one and only up-to-date version of my CV that anyone can review and download if needed.
 
 # Technical requirements
 

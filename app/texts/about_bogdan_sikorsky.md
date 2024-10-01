@@ -1,7 +1,3 @@
-<div style="display: flex; justify-content: space-between; align-items: flex-start;">
-
-<div style="width: 48%;">
-
 # Bogdan Sikorsky
 
 ## Data Engineer
@@ -10,19 +6,9 @@
 
 #### Relax, sit back, and let me share my story.
 
-</div>
-
-<div style="width: 48%;">
-
-# 
-
 <img src="https://raw.githubusercontent.com/bogdan-sikorsky/icons/main/bogdansikorsky/hello_wallpaper%20(3).webp" alt="niceimage" style="border-radius:5%" border="0">
 
 > ##### “Your future hasn’t been written yet. No one’s has. Your future is whatever you make it. So make it a good one!” – Doctor Emmett Brown.
-
-</div>
-
-</div>
 
 # About me
 
