@@ -10,11 +10,24 @@ services:
     depends_on:
       - traefik
     labels:
+      # Base setup
       - "traefik.enable=true"
       - "traefik.http.routers.streamlit_app.rule=HostRegexp(`${DOMAIN}`)"  # Host address
       - "traefik.http.services.streamlit_app.loadbalancer.server.port=${PORT}"
       - "traefik.http.routers.streamlit_app.entrypoints=web"  # Use the HTTP entry point (web)
+      # Rate Limiting Middleware
+      - "traefik.http.middlewares.streamlit_app_ratelimit.ratelimit.average=20"
+      - "traefik.http.middlewares.streamlit_app_ratelimit.ratelimit.burst=7"
+      - "traefik.http.middlewares.streamlit_app_ratelimit.ratelimit.period=1m"
+      # Apply the middleware to the router
+      - "traefik.http.routers.streamlit_app.middlewares=streamlit_app_ratelimit@docker"
     command: streamlit run app/01_Home.py --server.port=${PORT} --server.address=0.0.0.0
+    deploy:
+      resources:
+        limits:
+          memory: 600M  # Limit memory usage
+        reservations:
+          memory: 300M  # Soft memory limit
 
   traefik:
     image: traefik:v2.10
@@ -33,3 +46,9 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"  # Out of the box settings
       - "./letsencrypt:/letsencrypt"  # Storage for SSL certificates
+    deploy:
+      resources:
+        limits:
+          memory: 400M  # Limit memory usage
+        reservations:
+          memory: 200M  # Soft memory limit
