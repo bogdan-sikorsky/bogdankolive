@@ -55,29 +55,6 @@ services:
         reservations:
           memory: 200M  # Soft memory limit
 
-  netdata:
-    image: 0labs/0x01.aws-ec2-exporter:latest
-    container_name: aws-exporter
-    environment:
-      AWS_ACCESS_KEY_ID: "${AWS_NETDATA_KEY_ID}"
-      AWS_SECRET_ACCESS_KEY: "${AWS_NETDATA_KEY_SECRET}"
-      REGION: "us-west-2"
-    ports:
-      - ${AWS_NETDATA_PORT}:${AWS_NETDATA_PORT}
-    restart: unless-stopped  # Auto restart container if not stopped manually
-    deploy:
-      resources:
-        limits:
-          memory: 500M  # Limit memory usage
-        reservations:
-          memory: 250M  # Soft memory limit
-
-
-volumes:
-  netdataconfig:
-  netdatalib:
-  netdatacache:
-
 
 networks:
   bogdanko_network:
