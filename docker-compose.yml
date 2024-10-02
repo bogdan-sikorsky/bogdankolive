@@ -52,3 +52,18 @@ services:
           memory: 400M  # Limit memory usage
         reservations:
           memory: 200M  # Soft memory limit
+
+  new_relic:
+    container_name: newrelic-infra
+    image: newrelic/infrastructure:latest
+    cap_add:
+      - SYS_PTRACE
+    network_mode: host
+    pid: host
+    privileged: true
+    volumes:
+      - "/:/host:ro"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    environment:
+      NRIA_LICENSE_KEY: "${NEW_RELIC_KEY}"
+    restart: unless-stopped
