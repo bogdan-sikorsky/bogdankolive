@@ -62,6 +62,7 @@ with st.form(key='contact_form'):
     )
 
     # Captcha image and input
+    st.markdown('Ensure that browser settings do not block CAPTCHA image rendering')
     column_image, column_answer = st.columns([1, 1])
     image_placeholder = column_image.empty()
     image_placeholder.image(st.session_state.captcha_buffer, use_column_width=False)

@@ -11,3 +11,5 @@ You can find all my alternative contacts at the bottom of the page if you need t
 See you!
 
 ## Contact me
+
+> You can also contact me using my [LinkedIn](https://bit.ly/LinkedIn_Bogdan_sikorsky) or [Email](mailto:bogdan.sikorsky.dev@gmail.com) instead of using this form. All ways are valid.
